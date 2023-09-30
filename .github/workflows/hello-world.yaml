@@ -6,7 +6,7 @@ jobs:
   say-hello:
     env:
       NAME: "long"
-      TODAY: date::$(date +'%Y-%m-%d')
+      TODAY: "$(date +'%Y-%m-%d')"
     runs-on: ubuntu-latest
     steps:
       - name: Print date today
