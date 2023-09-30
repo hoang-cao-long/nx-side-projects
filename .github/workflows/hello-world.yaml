@@ -6,6 +6,7 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest
     steps:
-        # env:
-        #   TODAY: $(date +%Y-%m-%d)
+      - name: My first action
+        env:
+          TODAY: $(date +%Y-%m-%d)
       - run: echo Hello world, today is 
