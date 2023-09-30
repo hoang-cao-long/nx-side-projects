@@ -15,3 +15,4 @@ jobs:
       - uses: nrwl/nx-set-shas@v3
       - run: yarn
       - run: npx nx lint org
+        continue-on-error: false
