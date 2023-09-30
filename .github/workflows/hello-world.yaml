@@ -11,4 +11,4 @@ jobs:
           NAME: "long"
           TODAY: $(date +%Y-%m-%d)
         run: echo "Hello world, today is $TODAY"
-        run: echo "Hello world, today is $NAME"
+             echo "Hello world, today is $NAME"
