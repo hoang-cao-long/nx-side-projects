@@ -4,11 +4,11 @@ on:
     branches: [main]
 jobs:
   say-hello:
+    env:
+      NAME: "long"
+      TODAY: date::$(date +'%Y-%m-%d')
     runs-on: ubuntu-latest
     steps:
-        env:
-          NAME: "long"
-          TODAY: $(date +'%Y-%m-%d')
       - name: Print date today
         run: echo "Hello world, today is $TODAY"
       - name: Print my name
