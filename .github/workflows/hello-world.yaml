@@ -9,7 +9,9 @@ jobs:
       TODAY: "$(date +'%Y-%m-%d')"
     runs-on: ubuntu-latest
     steps:
+      - name: Get date today
+        run: echo "today=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
       - name: Print date today
-        run: echo "Hello world, today is $TODAY"
+        run: echo "Hello world, today is $today"
       - name: Print my name
         run: echo "Hello world, today is $NAME"
