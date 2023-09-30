@@ -13,4 +13,5 @@ jobs:
         with:
           fetch-depth: 0
       - uses: nrwl/nx-set-shas@v3
+      - run: cd ./org
       - run: npx nx lint org
