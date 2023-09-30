@@ -8,5 +8,7 @@ jobs:
     steps:
       - name: My first action
         env:
+          NAME: "long"
           TODAY: $(date +%Y-%m-%d)
         run: echo "Hello world, today is $TODAY"
+        run: echo "Hello world, today is $NAME"
