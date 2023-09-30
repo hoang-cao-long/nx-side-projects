@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: My first action
-      - env:
+        env:
           TODAY: $(date +%Y-%m-%d)
-      - run: echo Hello world, today is 
+        run: echo Hello world, today is $TODAY
