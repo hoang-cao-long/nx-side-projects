@@ -9,4 +9,4 @@ jobs:
       - name: My first action
         env:
           TODAY: $(date +%Y-%m-%d)
-        run: echo Hello world, today is $TODAY
+        run: echo "Hello world, today is $TODAY"
