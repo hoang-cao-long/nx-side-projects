@@ -6,9 +6,10 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest
     steps:
-      - name: My first action
         env:
           NAME: "long"
           TODAY: $(date +'%Y-%m-%d')
+      - name: Print date today
         run: echo "Hello world, today is $TODAY"
-             echo "Hello world, today is $NAME"
+      - name: Print my name
+        run: echo "Hello world, today is $NAME"
