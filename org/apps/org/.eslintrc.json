@@ -25,7 +25,11 @@
     },
     {
       "files": ["*.js", "*.jsx"],
-      "rules": {}
+      "extends": ["prettier"],
+      "plugins": ["prettier"],
+      "rules": {
+        "prettier/prettier": ["error"]
+      }
     },
     {
       "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
