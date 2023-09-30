@@ -15,7 +15,7 @@ jobs:
         run: echo "Hello world, today is $today"
       - name: Print date today v2
         env: 
-          TODAY: ${{date +'%Y-%m-%d'}}
+          TODAY: ${{(date +'%Y-%m-%d')}}
         run: echo "Hello world, today is $TODAY"
       - name: Print my name
         run: echo "Hello world, today is $NAME"
