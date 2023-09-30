@@ -14,6 +14,6 @@ jobs:
           fetch-depth: 0
       - uses: nrwl/nx-set-shas@v3
       - run: yarn
-      - run: npx nx lint org && echo "::error file={name},line={line},endLine={endLine},title={title}::{message}
+      - run: npx nx lint org && echo "::error file={name},line={line},endLine={endLine},title={title}::{message}"
         continue-on-error: false
       - run: echo "Can't run this"
