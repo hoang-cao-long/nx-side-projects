@@ -16,3 +16,4 @@ jobs:
       - run: yarn
       - run: npx nx lint org
         continue-on-error: false
+      - run: echo "Can't run this"
