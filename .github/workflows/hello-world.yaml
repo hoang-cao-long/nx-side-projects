@@ -1,20 +1,20 @@
-name: hello world
-on: 
-  push:
-    branches: [main]
-jobs:
-  say-hello:
-    env:
-      NAME: "long"
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get date today
-        run: echo "today=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
-      - name: Print date today v1
-        run: echo "Hello world, today is $today"
-      - name: Print date today v2
-        env: 
-          TODAY: $(date +'%Y-%m-%d')
-        run: echo "Hello world, today is ${{ env.TODAY }}"
-      - name: Print my name
-        run: echo "Hello world, today is $NAME"
+# name: hello world
+# on: 
+#   push:
+#     branches: [main]
+# jobs:
+#   say-hello:
+#     env:
+#       NAME: "long"
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Get date today
+#         run: echo "today=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+#       - name: Print date today v1
+#         run: echo "Hello world, today is $today"
+#       - name: Print date today v2
+#         env: 
+#           TODAY: $(date +'%Y-%m-%d')
+#         run: echo "Hello world, today is ${{ env.TODAY }}"
+#       - name: Print my name
+#         run: echo "Hello world, today is $NAME"
