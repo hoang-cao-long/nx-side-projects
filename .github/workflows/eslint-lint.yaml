@@ -1,0 +1,35 @@
+name: Lint
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+
+jobs:
+  main:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Run yarn 
+        run: yarn
+
+      - name: Run ESLint on changed files
+        id: eslint
+        run: npx eslint --fix $(git diff --name-only HEAD HEAD~1 | grep -E '\.(js|jsx)$' | xargs)
+
+      - name: Create comment if there are errors
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+               issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: 'Lint error!'
+            })
+    
