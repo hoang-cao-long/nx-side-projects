@@ -5,6 +5,10 @@ on:
       - main
       - develop
   pull_request:
+    types: [opened, synchronize, edited, reopened]
+    branches:
+      - develop
+      - master
 
 jobs:
   main:
@@ -14,12 +18,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Run yarn 
+      - name: Run yarn
         run: yarn
 
       - name: Run ESLint on changed files
         id: eslint
-        run: npx eslint --fix $(git diff --name-only HEAD HEAD~1 | grep -E '\.(js|jsx)$' | xargs)
+        run: npx eslint $(git diff --name-only HEAD HEAD~1 | grep -E '\.(js|jsx)$' | xargs)
+        # run: npx eslint --fix $(git diff --name-only HEAD HEAD~1 | grep -E '\.(js|jsx)$' | xargs)
 
       - name: Create comment if there are errors
         if: failure()
@@ -32,4 +37,3 @@ jobs:
                 repo: context.repo.repo,
                 body: 'Lint error!'
             })
-    
